@@ -33,7 +33,7 @@ export const getCryptos = () => (dispatch) => {
       const { symbol } = crypto;
       const cryptoData = await api.fetchCryptos(symbol);
 
-      data.push(cryptoData);
+      data.push(cryptoData[0]);
     });
 
     dispatch({ type: GET_CRYPTOS, payload: data });
@@ -49,9 +49,9 @@ export const getStocks = () => (dispatch) => {
     market.stocks.forEach(async (stock) => {
       const { name, symbol } = stock;
       const stockData = await api.fetchStocks(symbol);
-      stockData.name = name;
+      stockData[0].name = name;
 
-      data.push(stockData);
+      data.push(stockData[0]);
     });
 
     dispatch({ type: GET_STOCKS, payload: data });
