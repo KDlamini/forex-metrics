@@ -1,9 +1,13 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Forex Prices
+    <div className="markets">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
