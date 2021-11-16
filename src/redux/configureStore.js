@@ -4,10 +4,11 @@ import {
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import fxPrices from './reducers/forex';
+import stocks from './reducers/stocks';
 import commodities from './reducers/commodities';
 
 const reducer = combineReducers({
-  fxPrices, commodities,
+  fxPrices, stocks, commodities,
 });
 
 const store = createStore(
