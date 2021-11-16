@@ -10,10 +10,14 @@
 .category {
   text-decoration: none;
   color: #fff;
+  margin: 0;
+  padding: 0;
   width: 150px;
   height: 150px;
-  margin: 0;
-  border: 1px solid #6b6b6b;
+}
+
+.category:first-child {
+  width: 319px;
 }
 
 .category-info {
@@ -24,6 +28,7 @@
   width: 100%;
   height: 100%;
   margin: 0;
+  border: 1px solid #6b6b6b;
 }
 
 .category-title {
