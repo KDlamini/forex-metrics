@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getForex } from '../redux/actions/markets';
 import '../styles/Home.css';
 
 function Home() {
+  const forex = useSelector((state) => state.forex);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!forex.length) {
+      dispatch(getForex());
+    }
+  }, []);
+
   return (
     <section className="homepage">
       <Link to="/forex" className="category">

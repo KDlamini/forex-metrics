@@ -5,7 +5,7 @@ import {
 } from './actionTypes';
 
 // API action creators
-export const getFxPrices = () => async (dispatch) => {
+export const getForex = () => async (dispatch) => {
   try {
     const data = await api.fetchFxPrices();
 
