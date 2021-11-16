@@ -1,8 +1,8 @@
-import { GET_PRICES } from '../actions/actionTypes';
+import { GET_FOREX } from '../actions/actionTypes';
 
-const fxPrices = (state = [], action) => {
+const forex = (state = [], action) => {
   switch (action.type) {
-    case GET_PRICES:
+    case GET_FOREX:
       return action.payload;
 
     default:
@@ -10,4 +10,4 @@ const fxPrices = (state = [], action) => {
   }
 };
 
-export default fxPrices;
+export default forex;

@@ -1,0 +1,42 @@
+.homepage {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 320px;
+  height: 550px;
+  background: #4a00ac;
+}
+
+.category {
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.category:first-child {
+  width: 319px;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 1px solid #6b6b6b;
+}
+
+.category-title {
+  text-align: end;
+  padding: 0.5rem;
+}
+
+.total {
+  margin: 0;
+  padding: 0.5rem;
+}
