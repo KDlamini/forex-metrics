@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# forex-metrics
+This app displays a list of all popular Forex pair real-time prices. Users can click on currency pair to view the latest updates  about the pair.
 
 ## Available Scripts
 
