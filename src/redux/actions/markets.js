@@ -1,5 +1,5 @@
 import * as api from '../../api/api';
-import * as market from '../../components/data';
+import { cryptos } from '../../components/data';
 import {
   GET_FOREX, GET_CRYPTOS, GET_STOCKS, GET_EFTS,
 } from './actionTypes';
@@ -29,7 +29,7 @@ export const getCryptos = () => (dispatch) => {
   try {
     const data = [];
 
-    market.cryptos.forEach(async (crypto) => {
+    cryptos.forEach(async (crypto) => {
       const { symbol } = crypto;
       const cryptoData = await api.fetchCryptos(symbol);
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { categories } from './data';
 import { getForex } from '../redux/actions/markets';
 import '../styles/Home.css';
 
@@ -17,42 +18,18 @@ function Home() {
 
   return (
     <section className="homepage">
-      <Link to="/forex" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Forex</h2>
-          <p className="total">136</p>
-        </div>
-      </Link>
-      <Link to="/majors" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Majors</h2>
-          <p className="total">5</p>
-        </div>
-      </Link>
-      <Link to="/crypto" className="category">
-        <div className="category-info">
-          <h2 className="category-title">
-            Crypto
-            {' '}
-            <br />
-            {' '}
-            Currencies
-          </h2>
-          <p className="total">10</p>
-        </div>
-      </Link>
-      <Link to="/stocks" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Stocks</h2>
-          <p className="total">36</p>
-        </div>
-      </Link>
-      <Link to="/efts" className="category">
-        <div className="category-info">
-          <h2 className="category-title">EFTs</h2>
-          <p className="total">16</p>
-        </div>
-      </Link>
+      {categories.map((item) => {
+        const { path, category, market_cap: cap } = item;
+
+        return (
+          <Link key={path} to={`/${path}`} className="category">
+            <div className="category-info">
+              <h2 className="category-title">{category}</h2>
+              <p className="total">{`Cap: ${cap}`}</p>
+            </div>
+          </Link>
+        );
+      })}
     </section>
   );
 }
