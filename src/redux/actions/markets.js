@@ -1,7 +1,7 @@
 import * as api from '../../api/api';
 import * as market from '../../components/data';
 import {
-  GET_FOREX, GET_CRYPTOS, GET_STOCKS, GET_COMMODITIES,
+  GET_FOREX, GET_CRYPTOS, GET_STOCKS, GET_EFTS,
 } from './actionTypes';
 
 // API action creators
@@ -15,11 +15,11 @@ export const getForex = () => async (dispatch) => {
   }
 };
 
-export const getCommodities = () => async (dispatch) => {
+export const getEFTs = () => async (dispatch) => {
   try {
-    const data = await api.fetchCommodities();
+    const data = await api.fetchEFTs();
 
-    dispatch({ type: GET_COMMODITIES, payload: data });
+    dispatch({ type: GET_EFTS, payload: data });
   } catch (error) {
     throw new Error(error.message);
   }

@@ -4,7 +4,7 @@ import Forex from './components/Forex';
 import Majors from './components/Majors';
 import Crypto from './components/Crypto';
 import Stocks from './components/Stocks';
-import Commodities from './components/Commodities';
+import EFTs from './components/EFTs';
 import './App.css';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/majors" element={<Majors />} />
         <Route path="/crypto" element={<Crypto />} />
         <Route path="/stocks" element={<Stocks />} />
-        <Route path="/commodities" element={<Commodities />} />
+        <Route path="/efts" element={<EFTs />} />
       </Routes>
     </div>
   );

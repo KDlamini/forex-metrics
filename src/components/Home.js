@@ -47,9 +47,9 @@ function Home() {
           <p className="total">36</p>
         </div>
       </Link>
-      <Link to="/commodities" className="category">
+      <Link to="/efts" className="category">
         <div className="category-info">
-          <h2 className="category-title">Commodities</h2>
+          <h2 className="category-title">EFTs</h2>
           <p className="total">16</p>
         </div>
       </Link>
