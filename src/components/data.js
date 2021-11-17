@@ -16,5 +16,5 @@ export const categories = [
   { path: 'majors', category: 'Majors', market_cap: '$6.6 T' },
   { path: 'crypto', category: 'Crypto Currencies', market_cap: '$2,78 T' },
   { path: 'stocks', category: 'Limited Stocks', market_cap: ' $48,56 M' },
-  { path: 'efts', category: 'EFT iShares', market_cap: '$325.43 B' },
+  { path: 'efts', category: 'ETF iShares', market_cap: '$325.43 B' },
 ];
