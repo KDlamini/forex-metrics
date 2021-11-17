@@ -13,4 +13,4 @@ export const fetchCommodities = () => getData('https://financialmodelingprep.com
 
 export const fetchCryptos = (symbol) => getData(`https://financialmodelingprep.com/api/v3/quote/${symbol}?apikey=5d89975d35c10fcf5353706439854000`);
 
-export const fetchStocks = (symbol) => getData(`https://financialmodelingprep.com/api/v3/quote-short/${symbol}?apikey=5d89975d35c10fcf5353706439854000`);
+export const fetchStocks = () => getData('https://financialmodelingprep.com/api/v3/available-traded/list?apikey=5d89975d35c10fcf5353706439854000');
