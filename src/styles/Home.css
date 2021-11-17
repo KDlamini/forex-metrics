@@ -1,9 +1,9 @@
 .homepage {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 320px;
-  height: 550px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 320px;
+  max-width: 420px;
+  height: 100vh;
   background: #4a00ac;
 }
 
@@ -12,12 +12,6 @@
   color: #fff;
   margin: 0;
   padding: 0;
-  width: 150px;
-  height: 150px;
-}
-
-.category:first-child {
-  width: 319px;
 }
 
 .category-info {
