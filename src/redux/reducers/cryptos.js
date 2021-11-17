@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { GET_CRYPTOS } from '../actions/actionTypes';
 
 const cryptos = (state = [], action) => {

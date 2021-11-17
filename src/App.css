@@ -4,3 +4,11 @@
   display: flex;
   justify-content: center;
 }
+
+.positive {
+  color: #008000;
+}
+
+.negative {
+  color: #f00;
+}

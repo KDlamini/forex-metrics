@@ -18,7 +18,27 @@ function Majors() {
               <div className="pair-prices">
                 <p>{`Ask: ${ask}`}</p>
                 <p>{`Bid: ${bid}`}</p>
-                <p>{`Changes: ${changes}`}</p>
+                {
+                  changes > 0
+                    ? (
+                      <p>
+                        Change: &nbsp;
+                        <span className="positive">
+                          {`+${changes.toFixed(5)} `}
+                          &#9650;
+                        </span>
+                      </p>
+                    )
+                    : (
+                      <p>
+                        Change: &nbsp;
+                        <span className="negative">
+                          {`${changes.toFixed(5)} `}
+                          &#9660;
+                        </span>
+                      </p>
+                    )
+                }
               </div>
             </li>
           );

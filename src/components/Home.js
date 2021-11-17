@@ -7,6 +7,7 @@ import '../styles/Home.css';
 
 function Home() {
   const forex = useSelector((state) => state.forex);
+  const majors = useSelector((state) => state.majors);
 
   const dispatch = useDispatch();
 
@@ -15,7 +16,7 @@ function Home() {
       dispatch(getForex());
       dispatch(getMajors(forex));
     }
-    if (forex.length) {
+    if (forex.length && !majors.length) {
       dispatch(getMajors(forex));
     }
   }, []);
