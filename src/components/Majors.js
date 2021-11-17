@@ -2,14 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function Majors() {
-  const forex = useSelector((state) => state.forex);
-  const majors = forex.filter((majors) => majors.ticker === 'EUR/USD'
-    || majors.ticker === 'GBP/USD'
-    || majors.ticker === 'USD/JPY'
-    || majors.ticker === 'USD/CAD'
-    || majors.ticker === 'USD/CHF'
-    || majors.ticker === 'AUD/USD'
-    || majors.ticker === 'NZD/USD');
+  const majors = useSelector((state) => state.majors);
 
   return (
     <section className="forex">

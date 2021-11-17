@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { categories } from './data';
-import { getForex } from '../redux/actions/markets';
+import { getForex, getMajors } from '../redux/actions/markets';
 import '../styles/Home.css';
 
 function Home() {
@@ -13,6 +13,10 @@ function Home() {
   useEffect(() => {
     if (!forex.length) {
       dispatch(getForex());
+      dispatch(getMajors(forex));
+    }
+    if (forex.length) {
+      dispatch(getMajors(forex));
     }
   }, []);
 
