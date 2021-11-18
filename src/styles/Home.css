@@ -23,6 +23,28 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
+.top-bar {
+  justify-content: space-between;
+}
+
+.top-bar h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55px;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.cog.icon {
+  font-size: 1.2rem;
+}
+
 .banner {
   position: relative;
   height: 30vh;

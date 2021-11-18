@@ -1,3 +1,7 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+#### Original design idea by **Nelson Sakwa on Behance.**, in association with the Creative Commons [license](./CC.md) of the design.
+
 # Forex Metrics
 This app displays a list of all popular Forex pair real-time prices. Users can click on currency pair to view the latest updates  about the pair.
 
@@ -111,4 +115,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [CC](./CC.md) licensed.

@@ -28,3 +28,16 @@
 .negative {
   color: #f00;
 }
+
+.forex-page,
+.majors-page,
+.cryptos-page,
+.stocks-page,
+.efts-page {
+  min-width: 320px;
+  max-width: 420px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border-color);
+}
