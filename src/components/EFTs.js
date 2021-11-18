@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { categories } from './data';
+import '../styles/EFTs.css';
 
 function EFTs() {
   const efts = useSelector((state) => state.efts);
