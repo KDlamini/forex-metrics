@@ -1,58 +1,60 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getForex } from '../redux/actions/markets';
+import { categories } from './data';
+import { getForex, getMajors } from '../redux/actions/markets';
 import '../styles/Home.css';
 
 function Home() {
   const forex = useSelector((state) => state.forex);
+  const majors = useSelector((state) => state.majors);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (!forex.length) {
       dispatch(getForex());
+      dispatch(getMajors(forex));
+    }
+    if (forex.length && !majors.length) {
+      dispatch(getMajors(forex));
     }
   }, []);
 
   return (
     <section className="homepage">
-      <Link to="/forex" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Forex</h2>
-          <p className="total">136</p>
-        </div>
-      </Link>
-      <Link to="/majors" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Majors</h2>
-          <p className="total">5</p>
-        </div>
-      </Link>
-      <Link to="/crypto" className="category">
-        <div className="category-info">
-          <h2 className="category-title">
-            Crypto
-            {' '}
-            <br />
-            {' '}
-            Currencies
-          </h2>
-          <p className="total">10</p>
-        </div>
-      </Link>
-      <Link to="/stocks" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Stocks</h2>
-          <p className="total">36</p>
-        </div>
-      </Link>
-      <Link to="/commodities" className="category">
-        <div className="category-info">
-          <h2 className="category-title">Commodities</h2>
-          <p className="total">16</p>
-        </div>
-      </Link>
+      <div className="top-bar">Top</div>
+      <div className="banner">
+        {categories.map((item) => {
+          const { path, category, market_cap: cap } = item;
+
+          return category === 'Forex' && (
+          <Link key={path} to={`/${path}`} className={`banner-link ${path}`}>
+            <div className="banner-info">
+              <h2 className="banner-title">{category}</h2>
+              <p className="total">{`Cap: ${cap}`}</p>
+            </div>
+          </Link>
+          );
+        })}
+      </div>
+      <h3 className="sub-heading">Majors</h3>
+      <div className="content-body">
+        {categories.map((item) => {
+          const { path, category, market_cap: cap } = item;
+
+          return category !== 'Forex' && (
+          <Link key={path} to={`/${path}`} className={`category ${path}`}>
+            <div className="category-info">
+              <i className="chevron circle right icon" />
+              <h2 className="category-title">{category}</h2>
+              <p className="total">{`Cap: ${cap}`}</p>
+            </div>
+          </Link>
+          );
+        })}
+      </div>
+      <div className="bottom-bar">Bottom</div>
     </section>
   );
 }

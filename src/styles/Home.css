@@ -1,42 +1,124 @@
 .homepage {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 320px;
-  height: 550px;
-  background: #4a00ac;
-}
-
-.category {
-  text-decoration: none;
-  color: #fff;
+  font-family: 'Poppins', 'Roboto Slab', sans-serif;
+  min-width: 320px;
+  max-width: 420px;
+  height: 100vh;
+  color: var(--dark-color);
   margin: 0;
   padding: 0;
-  width: 150px;
-  height: 150px;
+  border: 1px solid var(--border-color);
+}
+
+.top-bar,
+.bottom-bar,
+.sub-heading {
+  display: flex;
+  align-items: center;
+  height: 5vh;
+  margin: 0;
+  padding: 0 0.8rem;
+  background: var(--bar-color);
+  box-shadow: var(--bar-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.banner {
+  position: relative;
+  height: 30vh;
+  background: var(--bg-color);
+}
+
+.banner-link,
+.category {
+  position: relative;
+  color: var(--dark-color);
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  background: var(--second-bg-color);
+}
+
+.category:first-child,
+.category:last-child {
+  background: var(--bg-color);
 }
 
 .category:first-child {
-  width: 319px;
+  border-top: none;
 }
 
+.category:last-child {
+  border-bottom: none;
+}
+
+.banner::before {
+  background-image: url(../assets/forex.png);
+}
+
+.category.majors::before {
+  background-image: url(../assets/majors.png);
+}
+
+.category.crypto::before {
+  background-image: url(../assets/crypto.png);
+}
+
+.category.stocks::before {
+  background-image: url(../assets/stocks.png);
+}
+
+.category.efts::before {
+  background-image: url(../assets/shares.png);
+}
+
+.banner::before,
+.category.majors::before,
+.category.crypto::before,
+.category.stocks::before,
+.category.efts::before {
+  content: "";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+}
+
+.content-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 55vh;
+}
+
+.banner-info,
 .category-info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
   height: 100%;
   margin: 0;
-  border: 1px solid #6b6b6b;
 }
 
+.chevron.circle.right {
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+.banner-title,
 .category-title {
   text-align: end;
-  padding: 0.5rem;
+  padding: 0 0.8rem;
+  color: var(--dark-color);
 }
 
 .total {
+  font-weight: 500;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0 0.8rem;
+  color: var(--text-color);
 }
