@@ -74,23 +74,28 @@
   border-bottom: none;
 }
 
-.banner.home::before {
+.banner.home::before,
+.banner.forex::before {
   background-image: url(../assets/forex.png);
 }
 
-.category.majors::before {
+.category.majors::before,
+.banner.majors::before {
   background-image: url(../assets/majors.png);
 }
 
-.category.crypto::before {
+.category.crypto::before,
+.banner.crypto::before {
   background-image: url(../assets/crypto.png);
 }
 
-.category.stocks::before {
+.category.stocks::before,
+.banner.stocks::before {
   background-image: url(../assets/stocks.png);
 }
 
-.category.efts::before {
+.category.efts::before,
+.banner.efts::before {
   background-image: url(../assets/shares.png);
 }
 

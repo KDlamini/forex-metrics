@@ -21,7 +21,7 @@ function Home() {
     }
 
     if (!cryptos.length) {
-      dispatch(getCryptos());
+      setTimeout(() => dispatch(getCryptos()), 2000);
     }
 
     if (!stocks.length) {

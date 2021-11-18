@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { categories } from './data';
-import '../styles/Home.css';
 import '../styles/Forex.css';
 
 function Forex() {
@@ -74,7 +73,8 @@ function Forex() {
                     )
                     : (
                       <p>
-                        Change: &nbsp;
+                        <span className="pair-change">Change:</span>
+                        {' '}
                         <span className="negative">
                           {`${changes.toFixed(5)} `}
                           &#9660;
