@@ -76,7 +76,7 @@ function Home() {
         })}
       </div>
 
-      <div className="bottom-bar">Bottom</div>
+      <div className="bottom-bar" />
     </section>
   );
 }
