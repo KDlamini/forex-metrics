@@ -23,18 +23,37 @@ function Home() {
 
   return (
     <section className="homepage">
-      {categories.map((item) => {
-        const { path, category, market_cap: cap } = item;
+      <div className="top-bar">top</div>
+      <div className="banner">
+        {categories.map((item) => {
+          const { path, category, market_cap: cap } = item;
 
-        return (
+          return category === 'Forex' && (
+          <Link key={path} to={`/${path}`} className="banner-link">
+            <div className="banner-info">
+              <h2 className="banner-title">{category}</h2>
+              <p className="total">{`Cap: ${cap}`}</p>
+            </div>
+          </Link>
+          );
+        })}
+      </div>
+      <h3 className="sub-heading">Majors</h3>
+      <div className="content-body">
+        {categories.map((item) => {
+          const { path, category, market_cap: cap } = item;
+
+          return category !== 'Forex' && (
           <Link key={path} to={`/${path}`} className="category">
             <div className="category-info">
               <h2 className="category-title">{category}</h2>
               <p className="total">{`Cap: ${cap}`}</p>
             </div>
           </Link>
-        );
-      })}
+          );
+        })}
+      </div>
+      <div className="bottom-bar">Bottom</div>
     </section>
   );
 }
