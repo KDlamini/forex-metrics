@@ -74,7 +74,7 @@
   border-bottom: none;
 }
 
-.banner::before {
+.banner.home::before {
   background-image: url(../assets/forex.png);
 }
 

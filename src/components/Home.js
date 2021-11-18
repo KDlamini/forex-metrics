@@ -30,7 +30,7 @@ function Home() {
           <i className="cog icon" />
         </div>
       </div>
-      <div className="banner">
+      <div className="banner home">
         {categories.map((item) => {
           const { path, category, market_cap: cap } = item;
 
@@ -38,7 +38,7 @@ function Home() {
           <Link key={path} to={`/${path}`} className={`banner-link ${path}`}>
             <div className="banner-info">
               <h3 className="banner-title">{category}</h3>
-              <p className="total">{`Cap: ${cap}`}</p>
+              <p className="total">{`Market Capitalization: ${cap}`}</p>
             </div>
           </Link>
           );

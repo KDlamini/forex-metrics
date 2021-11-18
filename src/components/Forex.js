@@ -1,11 +1,42 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { categories } from './data';
+import '../styles/Home.css';
+import '../styles/Forex.css';
 
 function Forex() {
   const forex = useSelector((state) => state.forex);
+  const navigate = useNavigate();
 
   return (
     <section className="forex-page">
+      <div className="top-bar">
+        <button
+          type="button"
+          className="go-back"
+          onClick={() => navigate('/')}
+        >
+          <i className="chevron left icon" />
+        </button>
+        <h4>Currencies</h4>
+        <div className="top-left" />
+      </div>
+      <div className="banner forex">
+        {categories.map((item) => {
+          const { path, category, market_cap: cap } = item;
+
+          return category === 'Forex' && (
+          <Link key={path} to={`/${path}`} className={`banner-link ${path}`}>
+            <div className="banner-info">
+              <h3 className="banner-title">{category}</h3>
+              <p className="total">{`Market Capitalization: ${cap}`}</p>
+            </div>
+          </Link>
+          );
+        })}
+      </div>
+      <h4 className="sub-heading">Tradable Forex Pairs</h4>
       <ul className="forex-pairs">
         { forex.map((pair) => {
           const {

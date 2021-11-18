@@ -2,3 +2,15 @@
   margin: 0;
   padding: 0;
 }
+
+.banner-info {
+  height: 30vh;
+}
+
+.banner.forex::before {
+  background-image: url(../assets/forex.png);
+}
+
+.banner.majors::before {
+  background-image: url(../assets/majors.png);
+}

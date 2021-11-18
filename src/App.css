@@ -34,10 +34,26 @@
 .cryptos-page,
 .stocks-page,
 .efts-page {
+  font-family: 'Poppins', 'Roboto Slab', sans-serif;
   min-width: 320px;
   max-width: 420px;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   border: 1px solid var(--border-color);
+}
+
+.go-back {
+  text-align: left;
+  padding: 0.2rem 0.2rem 0.2rem 0;
+  border: none;
+  background: none;
+}
+
+.chevron.left {
+  font-size: 1.2rem;
+}
+
+.go-back:hover .chevron.left {
+  color: var(--text-color);
 }
