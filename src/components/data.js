@@ -18,3 +18,15 @@ export const categories = [
   { path: 'stocks', category: 'Stocks', market_cap: ' $48,56 M' },
   { path: 'efts', category: 'ETF iShares', market_cap: '$325.43 B' },
 ];
+
+export const loadingPage = [
+  {
+    section: 'efts-page', page: 'EFTs', banner: 'efts', matchCategory: 'ETF iShares', middleBar: 'Tradable ETF iShares', body: 'eft-pairs',
+  },
+  {
+    section: 'stocks-page', page: 'Stocks', banner: 'stocks', matchCategory: 'Stocks', middleBar: 'Tradable Stocks', body: 'stock-pairs',
+  },
+  { path: 'crypto', category: 'Cryptos', market_cap: '$2,78 T' },
+  { path: 'stocks', category: 'Stocks', market_cap: ' $48,56 M' },
+  { path: 'efts', category: 'ETF iShares', market_cap: '$325.43 B' },
+];

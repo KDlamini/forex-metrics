@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { categories } from './data';
+import { categories, loadingPage } from './data';
+import Loading from './Loading';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import '../styles/EFTs.css';
 
 function EFTs() {
   const efts = useSelector((state) => state.efts);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (efts.length) {
+      setIsLoading(false);
+    }
+  });
+
+  if (isLoading) {
+    return (
+      loadingPage.map((params) => {
+        const {
+          section, page, banner, matchCategory, middleBar, body,
+        } = params;
+
+        return (
+          page === 'EFTs' && (
+          <Loading
+            section={section}
+            page={page}
+            banner={banner}
+            matchCategory={matchCategory}
+            middleBar={middleBar}
+            body={body}
+          />
+          )
+        );
+      })
+    );
+  }
 
   return (
     <section className="efts-page">
@@ -27,12 +59,12 @@ function EFTs() {
           const { path, category, market_cap: cap } = item;
 
           return category === 'ETF iShares' && (
-          <Link key={path} to={`/${path}`} className={`banner-link ${path}`}>
-            <div className="banner-info">
-              <h3 className="banner-title">{category}</h3>
-              <p className="total">{`Market Capitalization: ${cap}`}</p>
-            </div>
-          </Link>
+            <Link key={path} to={`/${path}`} className={`banner-link ${path}`}>
+              <div className="banner-info">
+                <h3 className="banner-title">{category}</h3>
+                <p className="total">{`Market Capitalization: ${cap}`}</p>
+              </div>
+            </Link>
           );
         })}
       </div>
