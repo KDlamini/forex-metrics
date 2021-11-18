@@ -1,13 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { categories } from './data';
+import { getMajors } from '../redux/actions/markets';
 import '../styles/Home.css';
 import '../styles/Forex.css';
 
 function Majors() {
+  const forex = useSelector((state) => state.forex);
   const majors = useSelector((state) => state.majors);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (forex.length && !majors.length) {
+      dispatch(getMajors(forex));
+    }
+  }, []);
 
   return (
     <section className="majors-page">
@@ -22,6 +32,7 @@ function Majors() {
         <h4>Major Currencies</h4>
         <div className="top-left" />
       </div>
+
       <div className="banner majors">
         {categories.map((item) => {
           const { path, category, market_cap: cap } = item;
@@ -36,7 +47,9 @@ function Majors() {
           );
         })}
       </div>
+
       <h4 className="sub-heading">Tradable Forex Pairs</h4>
+
       <ul className="major-pairs">
         { majors.map((pair) => {
           const {

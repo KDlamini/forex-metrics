@@ -1,18 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCryptos } from '../redux/actions/markets';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Crypto() {
   const cryptos = useSelector((state) => state.cryptos);
   const filterCryptos = cryptos.filter((crypto) => crypto !== undefined);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!cryptos.length) {
-      dispatch(getCryptos());
-    }
-  }, []);
 
   return (
     <section className="cryptos-page">

@@ -22,6 +22,7 @@ function Forex() {
         <h4>Currencies</h4>
         <div className="top-left" />
       </div>
+
       <div className="banner forex">
         {categories.map((item) => {
           const { path, category, market_cap: cap } = item;
@@ -36,7 +37,9 @@ function Forex() {
           );
         })}
       </div>
+
       <h4 className="sub-heading">Tradable Forex Pairs</h4>
+
       <ul className="forex-pairs">
         { forex.map((pair) => {
           const {
