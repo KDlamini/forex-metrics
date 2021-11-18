@@ -37,23 +37,32 @@ function Majors() {
         })}
       </div>
       <h4 className="sub-heading">Tradable Forex Pairs</h4>
-      <ul className="forex-pairs">
+      <ul className="major-pairs">
         { majors.map((pair) => {
           const {
-            ticker, ask, bid, changes,
+            ticker, high, low, changes,
           } = pair;
 
           return (
             <li key={ticker} className="pair">
               <h3 className="pair-name">{ticker}</h3>
               <div className="pair-prices">
-                <p>{`Ask: ${ask}`}</p>
-                <p>{`Bid: ${bid}`}</p>
+                <p>
+                  <span className="pair-high">High:</span>
+                  {' '}
+                  {high}
+                </p>
+                <p>
+                  <span className="pair-low">Low:</span>
+                  {' '}
+                  {low}
+                </p>
                 {
                   changes > 0
                     ? (
                       <p>
-                        Change: &nbsp;
+                        <span className="pair-change">Change:</span>
+                        {' '}
                         <span className="positive">
                           {`+${changes.toFixed(5)} `}
                           &#9650;

@@ -48,7 +48,7 @@
 .banner {
   position: relative;
   height: 30vh;
-  background: var(--bg-color);
+  background: var(--second-bg-color);
 }
 
 .banner-link,
