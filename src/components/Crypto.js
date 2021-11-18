@@ -15,7 +15,7 @@ function Crypto() {
   }, []);
 
   return (
-    <section className="cryptos">
+    <section className="cryptos-page">
       <ul className="crypto-pairs">
         { filterCryptos.map((pair) => {
           const {

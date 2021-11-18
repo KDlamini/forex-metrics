@@ -3,9 +3,10 @@
   min-width: 320px;
   max-width: 420px;
   height: 100vh;
-  color: var(--text-color);
+  color: var(--dark-color);
   margin: 0;
   padding: 0;
+  border: 1px solid var(--border-color);
 }
 
 .top-bar,
@@ -17,17 +18,21 @@
   margin: 0;
   padding: 0 0.8rem;
   background: var(--bar-color);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--bar-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .banner {
+  position: relative;
   height: 30vh;
   background: var(--bg-color);
 }
 
 .banner-link,
 .category {
-  color: var(--text-color);
+  position: relative;
+  color: var(--dark-color);
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -47,6 +52,41 @@
   border-bottom: none;
 }
 
+.banner::before {
+  background-image: url(../assets/forex.png);
+}
+
+.category.majors::before {
+  background-image: url(../assets/majors.png);
+}
+
+.category.crypto::before {
+  background-image: url(../assets/crypto.png);
+}
+
+.category.stocks::before {
+  background-image: url(../assets/stocks.png);
+}
+
+.category.efts::before {
+  background-image: url(../assets/shares.png);
+}
+
+.banner::before,
+.category.majors::before,
+.category.crypto::before,
+.category.stocks::before,
+.category.efts::before {
+  content: "";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+}
+
 .content-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -64,13 +104,21 @@
   margin: 0;
 }
 
+.chevron.circle.right {
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
 .banner-title,
 .category-title {
   text-align: end;
   padding: 0 0.8rem;
+  color: var(--dark-color);
 }
 
 .total {
+  font-weight: 500;
   margin: 0;
   padding: 0 0.8rem;
+  color: var(--text-color);
 }

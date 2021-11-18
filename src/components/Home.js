@@ -23,13 +23,13 @@ function Home() {
 
   return (
     <section className="homepage">
-      <div className="top-bar">top</div>
+      <div className="top-bar">Top</div>
       <div className="banner">
         {categories.map((item) => {
           const { path, category, market_cap: cap } = item;
 
           return category === 'Forex' && (
-          <Link key={path} to={`/${path}`} className="banner-link">
+          <Link key={path} to={`/${path}`} className={`banner-link ${path}`}>
             <div className="banner-info">
               <h2 className="banner-title">{category}</h2>
               <p className="total">{`Cap: ${cap}`}</p>
@@ -44,8 +44,9 @@ function Home() {
           const { path, category, market_cap: cap } = item;
 
           return category !== 'Forex' && (
-          <Link key={path} to={`/${path}`} className="category">
+          <Link key={path} to={`/${path}`} className={`category ${path}`}>
             <div className="category-info">
+              <i className="chevron circle right icon" />
               <h2 className="category-title">{category}</h2>
               <p className="total">{`Cap: ${cap}`}</p>
             </div>

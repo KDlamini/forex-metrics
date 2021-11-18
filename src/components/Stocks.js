@@ -14,7 +14,7 @@ function Stocks() {
   }, []);
 
   return (
-    <section className="stocks">
+    <section className="stocks-page">
       <ul className="forex-pairs">
         { stocks.map((stock) => {
           const { name, price, symbol } = stock;

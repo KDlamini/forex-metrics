@@ -5,7 +5,7 @@ function Forex() {
   const forex = useSelector((state) => state.forex);
 
   return (
-    <section className="forex">
+    <section className="forex-page">
       <ul className="forex-pairs">
         { forex.map((pair) => {
           const {

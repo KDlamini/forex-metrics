@@ -5,7 +5,7 @@ function Majors() {
   const majors = useSelector((state) => state.majors);
 
   return (
-    <section className="forex">
+    <section className="majors-page">
       <ul className="forex-pairs">
         { majors.map((pair) => {
           const {

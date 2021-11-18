@@ -14,7 +14,7 @@ function EFTs() {
   }, []);
 
   return (
-    <section className="efts">
+    <section className="efts-page">
       <ul className="forex-pairs">
         { efts.map((eft) => {
           const { name, price, symbol } = eft;
