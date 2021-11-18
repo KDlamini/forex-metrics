@@ -39,7 +39,7 @@ function Stocks() {
 
       <h4 className="sub-heading">Tradable Stocks</h4>
 
-      <ul className="forex-pairs">
+      <ul className="stock-pairs">
         { stocks.map((stock) => {
           const { name, price, symbol } = stock;
 
