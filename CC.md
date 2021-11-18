@@ -26,10 +26,10 @@ You do not have to comply with the license for elements of the material in the p
 No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as ***publicity, privacy, or moral rights*** may limit how you use the material.
 <br />
 
-## <p align="center">Marvel Studios MovieCon</p>
+## <p align="center">Forex Metrics</p>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this Marvel Studios MovieCon website and associated documentation files, to deal in the MovieCon website without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the MovieCon website, and to permit persons to whom the MovieCon website is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this Forex metrics app and associated documentation files, to deal in the metrics app without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the metrics app, and to permit persons to whom the metrics app is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the MovieCon website.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the metrics app.
 
-THE MOVIECON WEBSITE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MOVIECON WEBSITE OR THE USE OR OTHER DEALINGS IN THE MOVIECON WEBSITE.
+THE FOREX METRICS APP IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE FOREX METRICS APP OR THE USE OR OTHER DEALINGS IN THE FOREX METRICS APP.
