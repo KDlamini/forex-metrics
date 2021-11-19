@@ -1,10 +1,21 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+#### Original design idea by **Nelson Sakwa on Behance.**, in association with the Creative Commons [license](./CC.md) of the design.
+
 # Forex Metrics
-This app displays a list of all popular Forex pair real-time prices. Users can click on currency pair to view the latest updates  about the pair.
+This app displays a list of popular stock market prices. Users can click on selected categories including forex, majors, cryptocurrencies, stocks, and ETFs. Each category lists the latest prices update for the pair. Consumes the [Financial Modeling Prep API](https://site.financialmodelingprep.com/developer/docs).
+
+![home](src/assets/home-screen.png)
+![Forex](src/assets/forex-screen.png)
+![Majors](src/assets/major-screen.png)
+![Cryptos](src/assets/crypto-screen.png)
+![Stocks](src/assets/stock-screen.png)
+![ETFs](src/assets/etf-screen.png)
 
 This project is part of the Microverse curriculum Capstone week. The main objective is to understand how create a React app, use components, hooks, state, redux, run tests, and creating professional documentation for app development.
 
 ## Live Preview
-[Forex Metrics: Coming Soon!!!](https://...)
+[Forex Metrics](https://forex-metrics.netlify.app/)
 
 ## Built With
 
@@ -18,6 +29,7 @@ This project is part of the Microverse curriculum Capstone week. The main object
 - Eslint
 - babel
 - Jest
+- loader-spinner
 
 ## `Getting Started`
 
@@ -111,4 +123,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [CC](./CC.md) licensed.

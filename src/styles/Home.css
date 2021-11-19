@@ -1,7 +1,7 @@
 .homepage {
   font-family: 'Poppins', 'Roboto Slab', sans-serif;
+  width: 100%;
   min-width: 320px;
-  max-width: 420px;
   height: 100vh;
   color: var(--dark-color);
   margin: 0;
@@ -23,10 +23,32 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
+.top-bar {
+  justify-content: space-between;
+}
+
+.top-bar h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55px;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.cog.icon {
+  font-size: 1.2rem;
+}
+
 .banner {
   position: relative;
   height: 30vh;
-  background: var(--bg-color);
+  background: var(--second-bg-color);
 }
 
 .banner-link,
@@ -52,23 +74,28 @@
   border-bottom: none;
 }
 
-.banner::before {
+.banner.home::before,
+.banner.forex::before {
   background-image: url(../assets/forex.png);
 }
 
-.category.majors::before {
+.category.majors::before,
+.banner.majors::before {
   background-image: url(../assets/majors.png);
 }
 
-.category.crypto::before {
+.category.crypto::before,
+.banner.crypto::before {
   background-image: url(../assets/crypto.png);
 }
 
-.category.stocks::before {
+.category.stocks::before,
+.banner.stocks::before {
   background-image: url(../assets/stocks.png);
 }
 
-.category.efts::before {
+.category.efts::before,
+.banner.efts::before {
   background-image: url(../assets/shares.png);
 }
 
