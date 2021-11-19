@@ -12,3 +12,7 @@
 .stock.pair-prices {
   flex: 1;
 }
+
+.stocks.pair {
+  height: 13.75vh;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import ShowButton from './ShowButton';
 import { categories, loadingPage } from './data';
 import Loading from './Loading';
 import '../styles/Stocks.css';
@@ -8,6 +9,8 @@ import '../styles/Stocks.css';
 function Stocks() {
   const stocks = useSelector((state) => state.stocks);
   const [isLoading, setIsLoading] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(4);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,6 +18,16 @@ function Stocks() {
       setIsLoading(false);
     }
   });
+
+  const show = () => {
+    if (itemsToShow === 4) {
+      setItemsToShow(stocks.length);
+      setIsExpanded(true);
+    } else {
+      setItemsToShow(4);
+      setIsExpanded(false);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -71,11 +84,11 @@ function Stocks() {
       <h4 className="sub-heading">Tradable Stocks</h4>
 
       <ul className="stock-pairs">
-        { stocks.map((stock) => {
+        { stocks.slice(0, itemsToShow).map((stock) => {
           const { name, price, symbol } = stock;
 
           return (
-            <li key={symbol} className="pair">
+            <li key={symbol} className="stocks pair">
               <div className="stock-info pair-name">
                 <h3 className="stock-symbol">{symbol}</h3>
                 <p className="stock-name">{name}</p>
@@ -92,6 +105,8 @@ function Stocks() {
           );
         })}
       </ul>
+
+      <ShowButton isExpanded={isExpanded} show={show} />
     </section>
   );
 }
