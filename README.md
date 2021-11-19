@@ -15,7 +15,7 @@ This app displays a list of popular stock market prices. Users can click on sele
 This project is part of the Microverse curriculum Capstone week. The main objective is to understand how create a React app, use components, hooks, state, redux, run tests, and creating professional documentation for app development.
 
 ## Live Preview
-[Forex Metrics: Coming Soon!!!](https://...)
+[Forex Metrics](https://forex-metrics.netlify.app/)
 
 ## Built With
 
