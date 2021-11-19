@@ -3,7 +3,7 @@
 #### Original design idea by **Nelson Sakwa on Behance.**, in association with the Creative Commons [license](./CC.md) of the design.
 
 # Forex Metrics
-This app displays a list of popular stock market prices. Users can click on selected categories including forex, majors, cryptocurrencies, stocks, and ETFs. Each category lists the latest prices update for the pair.
+This app displays a list of popular stock market prices. Users can click on selected categories including forex, majors, cryptocurrencies, stocks, and ETFs. Each category lists the latest prices update for the pair. Consumes the [Financial Modeling Prep API](https://site.financialmodelingprep.com/developer/docs).
 
 ![home](src/assets/home-screen.png)
 ![Forex](src/assets/forex-screen.png)
