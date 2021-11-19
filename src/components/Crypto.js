@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { categories } from './data';
+import ShowButton from './ShowButton';
 import '../styles/Crypto.css';
 
 function Crypto() {
   const cryptos = useSelector((state) => state.cryptos);
   const filterCryptos = cryptos.filter((crypto) => crypto !== undefined);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(4);
 
   const navigate = useNavigate();
+
+  const show = () => {
+    if (itemsToShow === 4) {
+      setItemsToShow(filterCryptos.length);
+      setIsExpanded(true);
+    } else {
+      setItemsToShow(4);
+      setIsExpanded(false);
+    }
+  };
 
   return (
     <section className="cryptos-page">
@@ -42,13 +55,13 @@ function Crypto() {
       <h4 className="sub-heading">Tradable Crypto Pairs</h4>
 
       <ul className="crypto-pairs">
-        { filterCryptos.map((pair) => {
+        { filterCryptos.slice(0, itemsToShow).map((pair) => {
           const {
             name, symbol, price, change,
           } = pair;
 
           return (
-            <li key={symbol} className="pair">
+            <li key={symbol} className="crypto pair">
               <div className="crypto-info pair-name">
                 <h3 className="crypto-symbol">{symbol}</h3>
                 <p className="crypto-name">{name}</p>
@@ -88,6 +101,8 @@ function Crypto() {
           );
         })}
       </ul>
+
+      <ShowButton isExpanded={isExpanded} show={show} />
     </section>
   );
 }

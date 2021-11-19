@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import ShowButton from './ShowButton';
 import { categories } from './data';
 import '../styles/Forex.css';
 
@@ -100,31 +101,7 @@ function Forex() {
         })}
       </ul>
 
-      {
-        isExpanded
-          ? (
-            <button
-              type="button"
-              className="bottom-bar expand-button"
-              onClick={show}
-            >
-              Less
-              {' '}
-              <i className="chevron up icon" />
-            </button>
-          )
-          : (
-            <button
-              type="button"
-              className="bottom-bar expand-button"
-              onClick={show}
-            >
-              More
-              {' '}
-              <i className="chevron down icon" />
-            </button>
-          )
-      }
+      <ShowButton isExpanded={isExpanded} show={show} />
     </section>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { categories } from './data';
+import ShowButton from './ShowButton';
 import { getMajors } from '../redux/actions/markets';
 import '../styles/Forex.css';
 
@@ -110,31 +111,7 @@ function Majors() {
         })}
       </ul>
 
-      {
-        isExpanded
-          ? (
-            <button
-              type="button"
-              className="bottom-bar expand-button"
-              onClick={show}
-            >
-              Less
-              {' '}
-              <i className="chevron up icon" />
-            </button>
-          )
-          : (
-            <button
-              type="button"
-              className="bottom-bar expand-button"
-              onClick={show}
-            >
-              More
-              {' '}
-              <i className="chevron down icon" />
-            </button>
-          )
-      }
+      <ShowButton isExpanded={isExpanded} show={show} />
     </section>
   );
 }
