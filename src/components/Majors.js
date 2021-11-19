@@ -68,7 +68,7 @@ function Majors() {
           } = pair;
 
           return (
-            <li key={ticker} className="pair">
+            <li key={ticker} className="majors pair">
               <h3 className="pair-name">{ticker}</h3>
               <div className="pair-prices">
                 <p>

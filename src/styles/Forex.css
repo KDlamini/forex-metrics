@@ -20,6 +20,11 @@
   background: var(--bg-color);
 }
 
+.forex.pair,
+.majors.pair {
+  height: 18.33vh;
+}
+
 .pair-name {
   flex: 1;
   margin: 0;

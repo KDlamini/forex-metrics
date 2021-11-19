@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { categories } from './data';
@@ -6,7 +6,19 @@ import '../styles/Forex.css';
 
 function Forex() {
   const forex = useSelector((state) => state.forex);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(3);
   const navigate = useNavigate();
+
+  const show = () => {
+    if (itemsToShow === 3) {
+      setItemsToShow(forex.length);
+      setIsExpanded(true);
+    } else {
+      setItemsToShow(3);
+      setIsExpanded(false);
+    }
+  };
 
   return (
     <section className="forex-page">
@@ -40,13 +52,13 @@ function Forex() {
       <h4 className="sub-heading">Tradable Forex Pairs</h4>
 
       <ul className="forex-pairs">
-        { forex.map((pair) => {
+        { forex.slice(0, itemsToShow).map((pair) => {
           const {
             ticker, high, low, changes,
           } = pair;
 
           return (
-            <li key={ticker} className="pair">
+            <li key={ticker} className="forex pair">
               <h3 className="pair-name">{ticker}</h3>
               <div className="pair-prices">
                 <p>
@@ -87,6 +99,32 @@ function Forex() {
           );
         })}
       </ul>
+
+      {
+        isExpanded
+          ? (
+            <button
+              type="button"
+              className="bottom-bar expand-button"
+              onClick={show}
+            >
+              Less
+              {' '}
+              <i className="chevron up icon" />
+            </button>
+          )
+          : (
+            <button
+              type="button"
+              className="bottom-bar expand-button"
+              onClick={show}
+            >
+              More
+              {' '}
+              <i className="chevron down icon" />
+            </button>
+          )
+      }
     </section>
   );
 }
