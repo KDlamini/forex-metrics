@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import ShowButton from './ShowButton';
-import { categories, loadingPage } from './data';
+import { categories } from './data';
 import Loading from './Loading';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import '../styles/EFTs.css';
@@ -30,29 +30,6 @@ function EFTs() {
       setIsExpanded(false);
     }
   };
-
-  if (isLoading) {
-    return (
-      loadingPage.map((params) => {
-        const {
-          section, page, banner, matchCategory, middleBar, body,
-        } = params;
-
-        return (
-          page === 'ETFs' && (
-          <Loading
-            section={section}
-            page={page}
-            banner={banner}
-            matchCategory={matchCategory}
-            middleBar={middleBar}
-            body={body}
-          />
-          )
-        );
-      })
-    );
-  }
 
   return (
     <section className="efts-page">
@@ -85,28 +62,34 @@ function EFTs() {
 
       <h4 className="sub-heading">Tradable ETF iShares</h4>
 
-      <ul className="eft-pairs">
-        { efts.slice(0, itemsToShow).map((eft) => {
-          const { name, price, symbol } = eft;
+      {
+        isLoading
+          ? <Loading body="eft-pairs" />
+          : (
+            <ul className="eft-pairs">
+              { efts.slice(0, itemsToShow).map((eft) => {
+                const { name, price, symbol } = eft;
 
-          return (
-            <li key={symbol} className="efts pair">
-              <div className="eft-info pair-name">
-                <h3 className="eft-symbol">{symbol}</h3>
-                <p className="eft-name">{name}</p>
-              </div>
+                return (
+                  <li key={symbol} className="efts pair">
+                    <div className="eft-info pair-name">
+                      <h3 className="eft-symbol">{symbol}</h3>
+                      <p className="eft-name">{name}</p>
+                    </div>
 
-              <div className="eft pair-prices">
-                <p>
-                  <span className="pair-high">Price:</span>
-                  {' '}
-                  {price}
-                </p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+                    <div className="eft pair-prices">
+                      <p>
+                        <span className="pair-high">Price:</span>
+                        {' '}
+                        {price}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )
+      }
 
       <ShowButton isExpanded={isExpanded} show={show} />
     </section>

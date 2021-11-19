@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import ShowButton from './ShowButton';
-import { categories, loadingPage } from './data';
+import { categories } from './data';
 import Loading from './Loading';
 import '../styles/Stocks.css';
 
@@ -14,43 +14,21 @@ function Stocks() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (stocks.length) {
+    if (itemsToShow === 4 || itemsToShow === stocks.length) {
       setIsLoading(false);
     }
-  });
+  }, [isExpanded]);
 
   const show = () => {
     if (itemsToShow === 4) {
       setItemsToShow(stocks.length);
       setIsExpanded(true);
+      setIsLoading(true);
     } else {
       setItemsToShow(4);
       setIsExpanded(false);
     }
   };
-
-  if (isLoading) {
-    return (
-      loadingPage.map((params) => {
-        const {
-          section, page, banner, matchCategory, middleBar, body,
-        } = params;
-
-        return (
-          page === 'Stocks' && (
-          <Loading
-            section={section}
-            page={page}
-            banner={banner}
-            matchCategory={matchCategory}
-            middleBar={middleBar}
-            body={body}
-          />
-          )
-        );
-      })
-    );
-  }
 
   return (
     <section className="stocks-page">
@@ -83,28 +61,34 @@ function Stocks() {
 
       <h4 className="sub-heading">Tradable Stocks</h4>
 
-      <ul className="stock-pairs">
-        { stocks.slice(0, itemsToShow).map((stock) => {
-          const { name, price, symbol } = stock;
+      {
+        isLoading
+          ? <Loading body="stock-pairs" />
+          : (
+            <ul className="stock-pairs">
+              { stocks.slice(0, itemsToShow).map((stock) => {
+                const { name, price, symbol } = stock;
 
-          return (
-            <li key={symbol} className="stocks pair">
-              <div className="stock-info pair-name">
-                <h3 className="stock-symbol">{symbol}</h3>
-                <p className="stock-name">{name}</p>
-              </div>
+                return (
+                  <li key={symbol} className="stocks pair">
+                    <div className="stock-info pair-name">
+                      <h3 className="stock-symbol">{symbol}</h3>
+                      <p className="stock-name">{name}</p>
+                    </div>
 
-              <div className="stock pair-prices">
-                <p>
-                  <span className="pair-high">Price:</span>
-                  {' '}
-                  {price}
-                </p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+                    <div className="stock pair-prices">
+                      <p>
+                        <span className="pair-high">Price:</span>
+                        {' '}
+                        {price}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )
+      }
 
       <ShowButton isExpanded={isExpanded} show={show} />
     </section>
