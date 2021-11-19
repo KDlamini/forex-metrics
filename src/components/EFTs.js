@@ -25,7 +25,7 @@ function EFTs() {
         } = params;
 
         return (
-          page === 'EFTs' && (
+          page === 'ETFs' && (
           <Loading
             section={section}
             page={page}
@@ -50,7 +50,7 @@ function EFTs() {
         >
           <i className="chevron left icon" />
         </button>
-        <h4>EFTs</h4>
+        <h4>ETFs</h4>
         <div className="top-left" />
       </div>
 

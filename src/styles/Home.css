@@ -1,7 +1,7 @@
 .homepage {
   font-family: 'Poppins', 'Roboto Slab', sans-serif;
+  width: 420px;
   min-width: 320px;
-  max-width: 420px;
   height: 100vh;
   color: var(--dark-color);
   margin: 0;

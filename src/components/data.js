@@ -21,7 +21,7 @@ export const categories = [
 
 export const loadingPage = [
   {
-    section: 'efts-page', page: 'EFTs', banner: 'efts', matchCategory: 'ETF iShares', middleBar: 'Tradable ETF iShares', body: 'eft-pairs',
+    section: 'efts-page', page: 'ETFs', banner: 'efts', matchCategory: 'ETF iShares', middleBar: 'Tradable ETF iShares', body: 'eft-pairs',
   },
   {
     section: 'stocks-page', page: 'Stocks', banner: 'stocks', matchCategory: 'Stocks', middleBar: 'Tradable Stocks', body: 'stock-pairs',

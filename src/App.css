@@ -35,8 +35,8 @@
 .stocks-page,
 .efts-page {
   font-family: 'Poppins', 'Roboto Slab', sans-serif;
+  width: 420px;
   min-width: 320px;
-  max-width: 420px;
   min-height: 100vh;
   margin: 0;
   padding: 0;
