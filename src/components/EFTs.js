@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import ShowButton from './ShowButton';
 import { categories, loadingPage } from './data';
 import Loading from './Loading';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
@@ -9,13 +10,26 @@ import '../styles/EFTs.css';
 function EFTs() {
   const efts = useSelector((state) => state.efts);
   const [isLoading, setIsLoading] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(4);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (efts.length) {
+    if (itemsToShow === 4 || itemsToShow === efts.length) {
       setIsLoading(false);
     }
-  });
+  }, [isExpanded]);
+
+  const show = () => {
+    if (itemsToShow === 4) {
+      setItemsToShow(efts.length);
+      setIsExpanded(true);
+      setIsLoading(true);
+    } else {
+      setItemsToShow(4);
+      setIsExpanded(false);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -72,11 +86,11 @@ function EFTs() {
       <h4 className="sub-heading">Tradable ETF iShares</h4>
 
       <ul className="eft-pairs">
-        { efts.map((eft) => {
+        { efts.slice(0, itemsToShow).map((eft) => {
           const { name, price, symbol } = eft;
 
           return (
-            <li key={symbol} className="pair">
+            <li key={symbol} className="efts pair">
               <div className="eft-info pair-name">
                 <h3 className="eft-symbol">{symbol}</h3>
                 <p className="eft-name">{name}</p>
@@ -93,6 +107,8 @@ function EFTs() {
           );
         })}
       </ul>
+
+      <ShowButton isExpanded={isExpanded} show={show} />
     </section>
   );
 }

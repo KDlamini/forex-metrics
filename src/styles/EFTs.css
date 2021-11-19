@@ -13,10 +13,6 @@
   flex: 1;
 }
 
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
-  background: var(--second-bg-color);
+.efts.pair {
+  height: 13.75vh;
 }
