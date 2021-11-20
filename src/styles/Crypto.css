@@ -1,0 +1,9 @@
+.crypto-pairs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.crypto.pair {
+  height: 13.75vh;
+}
